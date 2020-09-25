@@ -3,11 +3,11 @@
 
 
 int main() {
-    using F = Containers::Monad<short>;
-    const std::vector<F> list {F(1), F(2), F(3)};
+    using M = Containers::Monad<short>;
+    const std::vector<M> list {M(1), M(2), M(3)};
 
     // FILO : First In Last Out
-    Containers::Stack<F> stack;
+    Containers::Stack<M> stack;
     for (const auto& val : list) {
         stack.push(val);
     }
@@ -20,7 +20,7 @@ int main() {
     std::cout << '\n';
 
     // FIFO : First In First Out
-    Containers::Queue<F> queue;
+    Containers::Queue<M> queue;
     for (const auto& val : list) {
         queue.push(val);
     }
