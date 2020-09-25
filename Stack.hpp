@@ -11,15 +11,14 @@ namespace Containers {
     class Monoid {
         T value;
     public:
-        Monoid() = default;
         explicit Monoid(T val) : value(val) {}
 
-        auto get() const {
+        auto get() const -> T {
             return value;
         }
 
         template<typename UT>
-        auto set(UT&& val) {
+        auto set(UT&& val) -> Monoid<T> {
             value = std::forward<UT>(val);
             return *this;
         }
@@ -31,12 +30,12 @@ namespace Containers {
     public:
         explicit Monad(T val) : value(val) {}
 
-        auto get() const {
+        auto get() const -> T {
             return value;
         }
 
         template<typename UT>
-        auto set(UT&& val) const {
+        auto set(UT&& val) const -> Monad<T> {
             return Monad(std::forward<UT>(val));
         }
     };
