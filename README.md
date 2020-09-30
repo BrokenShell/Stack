@@ -1,24 +1,23 @@
 # Generic Containers
 
 
+## Objects
 ### `Monoid<T>` Chainable Object
 - `get() const -> T` getter
-- `set(val) -> Monoid<T>` setter
+- `set(T val) -> Monoid<T>` chainable setter
 
-### `Monad<T>` Stateless Chainable Object
+### `Monad<T>` Pure Chainable Object
 - `get() const -> T` getter
-- `set(val) const -> Monad<T>` setter
+- `set(T val) const -> Monad<T>` chainable const setter
 
-### `Stack<T>` FILO Sequence Container
-- `pop() -> T` getter
-- `push() -> void` setter
-- `size() -> size_t` length
-- `begin() -> It` iterator view
-- `end() -> It` iterator view
 
-### `Queue<T>` FIFO Sequence Container
-- `pop() -> T` getter
-- `push() -> void` setter
-- `size() -> size_t` length
-- `begin() -> It` iterator view
-- `end() -> It` iterator view
+## Sequences
+### `Stack<T>` FILO Sequence
+- `pop() -> T` remove and return the top value
+- `push(T val) -> void` push a value to the top
+- `size() -> size_t` returns the number of values
+
+### `Queue<T>` FIFO Sequence
+- `pop() -> T` remove and return the top value
+- `push(T val) -> void` push a value to the bottom
+- `size() -> size_t` returns the number of values
