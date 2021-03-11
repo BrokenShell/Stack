@@ -8,7 +8,7 @@
 
 int main() {
     using namespace Containers;
-    std::cout << std::endl;
+    std::cout << '\n';
 
     { MonkeyTimer::ScopeTimer timer("\nContainers::Stack<Monad> Timer", 6);
         // FILO : First In Last Out
